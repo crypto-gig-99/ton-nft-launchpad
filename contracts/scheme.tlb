@@ -1,0 +1,18 @@
+_ admin_pubkey:uint256 available:uint32 price:Coins last_index:uint32 collection:MsgAddressInt
+  buyer_limit:uint32 start_time:uint32 end_time:uint32 admin_address:MsgAddressInt
+  active:Bool helper_code:^Cell ^[total_affilate:Coins affilate_percentage:uint16 extra:uint16] = SaleStorage;
+
+_ sale:MsgAddressInt user:MsgAddressInt available:uint32 total_affilate:Coins = HelperStorage;
+
+purchase#503a1f4 query_id:uint64 quantity:uint16 time:uint64 signature:bits512 referrer:(Maybe MsgAddressInt) = InternalMsgBody;
+change_collection_owner#4afc346e new_owner:MsgAddressInt collection:Maybe MsgAddressInt = InternalMsgBody;
+purchase_check#26ae3cf9 query_id:uint64 quantity:uint16 referrer:(Maybe MsgAddressInt) = InternalMsgBody;
+purchase_confirm#dde87fe4 query_id:uint64 quantity:uint16 user:MsgAddressInt referrer:(Maybe MsgAddressInt) = InternalMsgBody;
+credit_affilate#27e28b63 query_id:uint64 amount:Coins = InternalMsgBody;
+change_last_index#27eb8974 new:uint32 = InternalMsgBody;
+change_available#277b8f15 new:uint32 = InternalMsgBody;
+change_start_time#fd36d2c new:uint32 = InternalMsgBody;
+change_end_time#44e014e6 new:uint32 = InternalMsgBody;
+disable#34c02669 = InternalMsgBody;
+enable#2e484313 = InternalMsgBody;
+collect_remaining_balance#4316d699 = InternalMsgBody;
